@@ -1,3 +1,7 @@
+# Git
+.git
+.gitignore
+
 # Python
 __pycache__/
 *.py[cod]
@@ -38,8 +42,19 @@ ENV/
 logs/
 
 # Uploads and temporary files
-uploads/
-temp/
+uploads/*
+temp/*
+
+# Keep the directories but not their contents
+!uploads/.gitkeep
+!temp/.gitkeep
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Railway
+railway.toml
 
 # System Files
 .DS_Store
