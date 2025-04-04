@@ -1,6 +1,18 @@
 [build]
 builder = "nixpacks"
-buildCommand = "apt-get update && apt-get install -y tesseract-ocr poppler-utils"
+buildCommand = """
+apt-get update && \
+apt-get install -y \
+    tesseract-ocr \
+    poppler-utils \
+    python3-dev \
+    build-essential \
+    libpoppler-cpp-dev \
+    pkg-config \
+    python3-pip \
+    libmagic1 \
+    && pip install --upgrade pip setuptools wheel
+"""
 
 [deploy]
 startCommand = "gunicorn app:app"
@@ -8,4 +20,6 @@ healthcheckPath = "/"
 healthcheckTimeout = 100
 
 [env]
-PYTHON_VERSION = "3.12" 
+PYTHON_VERSION = "3.12"
+PORT = "8000"
+PYTHONUNBUFFERED = "1" 
