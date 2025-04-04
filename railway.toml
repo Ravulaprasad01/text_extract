@@ -6,7 +6,6 @@ buildCommand = "apt-get update && apt-get install -y tesseract-ocr poppler-utils
 startCommand = "gunicorn app:app"
 healthcheckPath = "/"
 healthcheckTimeout = 100
-restartPolicyType = "on-failure"
 
 [env]
 PYTHON_VERSION = "3.12" 
