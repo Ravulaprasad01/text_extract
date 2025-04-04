@@ -6,6 +6,8 @@ apt-get install -y \
     tesseract-ocr \
     poppler-utils \
     python3-dev \
+    python3-distutils \
+    python3-setuptools \
     build-essential \
     libpoppler-cpp-dev \
     pkg-config \
@@ -20,6 +22,6 @@ healthcheckPath = "/"
 healthcheckTimeout = 100
 
 [env]
-PYTHON_VERSION = "3.12"
+PYTHON_VERSION = "3.10"
 PORT = "8000"
 PYTHONUNBUFFERED = "1" 
